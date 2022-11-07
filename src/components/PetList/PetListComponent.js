@@ -9,8 +9,8 @@ export default class PetListComponent extends React.Component{
     
     service = new PetService();
 
-    constructor(pros){
-        super(pros);
+    constructor(props){
+        super(props);
         this.state = {
             pets: [],
             search:''
@@ -29,6 +29,7 @@ export default class PetListComponent extends React.Component{
     }
     
     updateSearch = (newSearch)=>{
+        debugger;
         this.setState({
             search: newSearch
         })
@@ -38,7 +39,7 @@ export default class PetListComponent extends React.Component{
         return (
             <React.Fragment>
                 <Menu/>
-                <PetSearch updateSearch={this.updateSearch}/>
+                <PetSearch updateSearch={this.updateSearch} list={this.state.pets}/>
                 <PetTable pets={this.state.pets} search={this.state.search} list={this.list}/>
             </React.Fragment>
         );

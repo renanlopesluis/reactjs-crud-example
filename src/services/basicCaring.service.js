@@ -4,7 +4,7 @@ import WorkOptionsList from '../models/WorkOptionsList.js';
 
 export default class BasicCaringService {
 
-  baseUrl = 'http://localhost:8080/petstore/';
+  baseUrl = 'http://localhost:3010/petstore/';
   bathUrl = "bath"
   hairCareUrl = "hair";
   workOptions = [];

@@ -11,10 +11,11 @@ export default class PetSearch extends React.Component{
     }
 
     onChange = (event) =>{
+        const query = event.target.value;
         this.setState({
-            search: event.target.value.substr(0,20)
+            search: query
         });
-        this.props.updateSearch(this.state.search.toLowerCase());
+        this.props.updateSearch(query.toLowerCase());
     }
 
     render(){
