@@ -12,7 +12,7 @@ export default class CrudService extends RestService{
     }
 
     get(id){
-        return axios.get(super.getUrl(), {params:{id: id }});
+        return axios.get(`${super.getUrl()}/${id}`);
     }
 
     search(name){

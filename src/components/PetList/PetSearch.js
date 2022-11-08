@@ -21,8 +21,8 @@ export default class PetSearch extends React.Component{
     render(){
         return (
             <React.Fragment>
-                <div class="input-group">
-                    <input type="text" class="form-control filter" id="filterName" name="filterName" 
+                <div className="input-group">
+                    <input type="text" className="form-control filter" id="filterName" name="filterName" 
                     placeholder="search pets..." onChange={this.onChange} value={this.state.search}/>
                 </div>
             </React.Fragment>

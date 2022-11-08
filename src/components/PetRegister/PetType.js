@@ -32,9 +32,9 @@ export default class PetType extends React.Component{
     render(){
         return (
             <React.Fragment>
-                <div class="form-group">
+                <div className="form-group">
                     <label for="type">Type</label>
-                    <select class="form-control" name="type" ref="type" onChange={this.onChange} required>
+                    <select className="form-control" name="type" ref="type" onChange={this.onChange} required>
                     {
                         this.state.types.map((type)=>
                             (

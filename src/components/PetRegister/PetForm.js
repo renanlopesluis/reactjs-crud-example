@@ -23,7 +23,7 @@ export default class PetForm extends React.Component{
 
     onSave = (event) => {
         event.preventDefault();
-        let pet = PetBuilder.build(null, this.refs.name.value, this.state.petType, this.refs.age.value);
+        const pet = PetBuilder.build(null, this.refs.name.value, this.state.petType, this.refs.age.value);
         this.service.save(pet).then(
             response=>{
                 this.refs.name.focus();
@@ -40,21 +40,21 @@ export default class PetForm extends React.Component{
     render(){
         return (
             <React.Fragment>
-                <div class="container">
-                    <h2 class="main">Pet Register</h2>
+                <div className="container">
+                    <h2 className="main">Pet Register</h2>
                     <section>
-                        <div class="container">
+                        <div className="container">
                             <form ref="petForm" method="post" >
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="name">Name</label>
                                     <input type="text" id="name" ref="name"
-                                        class="form-control" placeholder="name" required/>
+                                        className="form-control" placeholder="name" required/>
                                 </div>
                                 <PetType updatePetType={this.onUpdatePetType}/>
-                                <div class="form-group">
+                                <div className="form-group">
                                     <label for="name">Age</label>
                                     <input type="number" id="age" ref="age"
-                                        class="form-control" placeholder="age"
+                                        className="form-control" placeholder="age"
                                         required/>
                                 </div>
                                 <Button color="primary" onClick={this.onSave}>Save</Button>

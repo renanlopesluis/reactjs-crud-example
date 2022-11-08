@@ -4,7 +4,7 @@ import WorkOptionsList from '../models/WorkOptionsList.js';
 
 export default class BasicCaringService {
 
-  baseUrl = 'http://localhost:3010/petstore/';
+  baseUrl = 'http://localhost:3010/petstore/pets';
   bathUrl = "bath"
   hairCareUrl = "hair";
   workOptions = [];
@@ -19,8 +19,8 @@ export default class BasicCaringService {
     return this.workOptions;
   }
 
-  getWorks(codeService){
-    return WorkListFactory.instance(codeService);
+  getWorks(serviceCode){
+    return WorkListFactory.instance(serviceCode);
   }
 
   executeWork(basiceServiceCode, petId, serviceCode){
@@ -32,11 +32,11 @@ export default class BasicCaringService {
   }
 
   doBath(petId, serviceCode){
-    return axios.put(this.baseUrl.concat(this.bathUrl), {petId: petId, serviceCode: serviceCode });
+    return axios.put(`${this.baseUrl}/${this.bathUrl}`, {petId: petId, serviceCode: serviceCode });
   }
 
   doHairCare(petId, serviceCode){
-    return axios.put(this.baseUrl.concat(this.hairCareUrl), {petId: petId, serviceCode: serviceCode });
+    return axios.put(`${this.baseUrl}/${this.hairCareUrl}`, {petId: petId, serviceCode: serviceCode });
   }
 
   loadWorkOptions(){

@@ -9,7 +9,6 @@ export default class BasicCaringWorkParent extends React.Component{
     
     constructor(props){
         super(props);
-        
         this.state = {
             works: this.service.getWorkOptions(),
             selectedWorkOption: null
@@ -25,11 +24,11 @@ export default class BasicCaringWorkParent extends React.Component{
     render(){
         return (
             <React.Fragment>
-                <span class="input-group-addon">
+                <span className="input-group-addon">
                     {
                         this.state.works.map((work)=>
                             (
-                                <label class="radio-inline">
+                                <label className="radio-inline">
                                     <input type="radio" ref="serviceOption" onChange={()=>this.onChange(work.code)} checked={this.state.selectedWorkOption === work.code}/>
                                     <i>{work.description}</i>
                                 </label>    
@@ -43,6 +42,3 @@ export default class BasicCaringWorkParent extends React.Component{
     }
 }
 
-BasicCaringWorkParent.propTypes = {
-    petId: PropTypes.number.isRequired
-}

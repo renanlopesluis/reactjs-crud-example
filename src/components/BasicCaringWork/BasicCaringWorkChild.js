@@ -34,8 +34,8 @@ export default class BasicCaringWorkChild extends React.Component{
         return (
             <React.Fragment>
                 <div>
-                    <label for="type">Work type:</label>
-                    <select class="form-control" name="basicWorks" ref="basicWorks" required>
+                    <label htmlFor="type">Work type:</label>
+                    <select className="form-control" name="basicWorks" ref="basicWorks" required>
                     {  
                         this.service.getWorks(this.props.workCode).map((work)=>
                             (
@@ -44,14 +44,10 @@ export default class BasicCaringWorkChild extends React.Component{
                         )
                     }
                     </select>  
-                    <button  type="button" class="btn btn-primary" onClick={this.onExecuteWork}>OK</button>
+                    <button  type="button" className="btn btn-primary" onClick={this.onExecuteWork}>OK</button>
                 </div>        
             </React.Fragment>
         );
     }
 }
 
-BasicCaringWorkChild.propTypes = {
-    petId: PropTypes.number.isRequired,
-    workCode: PropTypes.number.isRequired
-}

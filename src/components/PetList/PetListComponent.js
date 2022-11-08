@@ -29,7 +29,6 @@ export default class PetListComponent extends React.Component{
     }
     
     updateSearch = (newSearch)=>{
-        debugger;
         this.setState({
             search: newSearch
         })

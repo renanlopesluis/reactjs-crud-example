@@ -13,6 +13,3 @@ export default class BasicCaringWorkComponent extends React.Component{
         );
     }
 }
-BasicCaringWorkComponent.propTypes = {
-    petId: PropTypes.number.isRequired
-}
