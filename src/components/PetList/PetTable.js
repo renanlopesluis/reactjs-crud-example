@@ -5,10 +5,9 @@ import PetRemoval from './PetRemoval';
 export default class PetTable extends React.Component{
   
     filterPets = () => {
-        const search = this.props.search ? this.props.search.toLowerCase() : ''
         return this.props.pets.filter(
             (pet) => {
-                return pet && pet.name.toLowerCase().indexOf(search) !== -1;
+                return pet && pet.name.toLowerCase().indexOf(this.props.search.toLowerCase()) !== -1;
             }
         );
     }
